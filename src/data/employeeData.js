@@ -84,7 +84,7 @@ export const employeeData =[
         id:11,
         image: awais,
         name:"Awais Saddiqui",
-        title:"MERN Stack Developer ",
+        title:"MERN Stack Developer | Engineer",
     },
     {
         id:12,

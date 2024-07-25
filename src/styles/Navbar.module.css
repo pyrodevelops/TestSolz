@@ -1,0 +1,127 @@
+html{
+    scroll-behavior: smooth;
+   
+}
+
+:root {
+    --primaryColor: #31CFFC;
+    --navBackground: #ffffff;
+    --navTextColor: #333333;
+    --drawerBackground: rgba(0, 0, 0, 0.8);
+}
+
+.navWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: var(--navBackground);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brandLogo img {
+    /* width: 100%; Make the logo take up 100% of its container */
+    height: auto;
+    width: 150px; 
+    /* border: 1px solid black */
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.navMenu {
+    list-style-type: none;
+    display: flex;
+    padding: 0 3rem;
+}
+
+.navMenu li {
+    margin-left: 20px;
+}
+
+.navMenu li a {
+    text-decoration: none;
+    color: var(--navTextColor);
+    font-weight: bold;
+    padding: 0 3rem;
+    font-size: 1rem;
+    font-family: 'inter';
+    transition: color 0.3s;
+}
+
+.navMenu li a:hover {
+    color: var(--primaryColor);
+}
+
+@media(max-width: 2000px){
+    .navMenu li a {
+        padding: 0 4rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width: 1490px){
+    .navMenu li a {
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+}
+@media(max-width: 822px){
+    .navMenu li a {
+        padding: 0 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+    .brandLogo img{
+        max-width: 65px;
+        border-radius: 15px;
+    }
+    .navWrapper{
+        position: relative;
+
+    }
+
+    .navMenu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 100%;
+        height: 100%;
+        background-color: var(--drawerBackground);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        text-align: center;
+        padding: 0;
+    }
+
+    .navMenu.showMenu {
+        right: 0;
+    }
+
+    .navMenu li {
+        margin: 15px 0;
+    }
+
+    .navMenu li a {
+        font-size: 1.5em;
+        color: #fff;
+    }
+}
+
+
+

@@ -1,0 +1,54 @@
+:root {
+    --primaryColor: #31CFFC;
+    --fontFamily: 'Inter', sans-serif;
+}
+
+.ourAimsContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ourAimsTitle {
+    /* Existing styles */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: var(--fontFamily);
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    /* Text decoration for background gradient  */
+    text-decoration: underline transparent;  /* Transparent underline for positioning */
+  
+    /* Background gradient for underline effect  */
+    background-image: linear-gradient(to right, transparent 0%, var(--primaryColor)50%, transparent 100%);
+    /* Adjust gradient positioning and color as needed */
+    background-repeat: no-repeat;
+    background-size: 100% 3px;  /* Adjust width and height of the gradient */
+    background-position: bottom;  /* Position the gradient at the bottom of the text */
+  }
+  
+  
+
+.goalsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .ourAimsTitle {
+        font-size: 1.5rem;
+    }
+
+    .goalsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+

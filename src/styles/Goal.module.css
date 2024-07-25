@@ -1,0 +1,112 @@
+:root {
+    --primaryColor: #31CFFC;
+    --secondaryColor: #0B7C96;
+
+    --fontFamily: 'Inter', sans-serif;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0px;
+
+}
+
+.sideLine {
+    display: none;
+    position: absolute;
+    left: 0.5%;
+    top: 15%;
+    width: 7px;
+    background-color: var(--primaryColor);
+    transform: translateX(-50%);
+    height: 110%;
+}
+
+.card {
+    flex: 1 1 calc(33.333% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* background: rgba(49, 207, 252, 0.13); */
+    border-radius: 16px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(49, 207, 252, 0.29);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    font-family: var(--fontFamily);
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1rem;
+    text-align: start;
+    line-height: 1.5;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 480px) {
+    .card img{
+        width: 70px;
+        height: 70px;
+    }
+    .card h2 {
+        font-size: 0.9rem;
+    }
+    .card p{
+        font-size: 0.65rem;
+    }
+    .sideLine {
+        display: block;
+    }
+
+    .section {
+        flex-direction: row;
+    }
+
+    .card {
+        margin-left: 30px;
+        padding-left: 30px;
+    }
+
+    .card::before {
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-color: var(--primaryColor);
+        border-radius: 50%;
+        position: absolute;
+        left: -37px;
+        top: 0%;
+        transform: translateY(-50%);
+
+    }
+    .section:first-of-type .card::before {
+        top: 0%;
+
+    }
+    .section:last-of-type .sideLine {
+        top: -25%;
+    }
+
+}
+

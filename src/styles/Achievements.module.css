@@ -1,0 +1,195 @@
+:root {
+    --primaryColor: #31CFFC;
+    --fontFamily: 'Oxygen', 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-height: 80vh; /* Ensure the container takes at least 80% of the viewport height */
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/home-office.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.3);
+    z-index: -1;
+}
+
+.heading {
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: var(--fontFamily);
+    font-weight: bold;
+    margin-bottom: 5rem;
+}
+
+.heading span {
+    color: var(--primaryColor);
+}
+
+.achievementsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.achievementItem {
+    transition: transform 0.3s ease;
+}
+
+.achievementItem:hover {
+    transform: translateY(-5px);
+}
+
+.achievementItem span {
+    display: block;
+    font-family: var(--fontFamily);
+    color: var(--primaryColor);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.achievementItem p {
+    font-size: 1rem;
+    color: #fff;
+    font-family: var(--fontFamily);
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 830px;
+}
+
+.footer {
+    flex: 1;
+    min-width: 280px;
+    padding: 2rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+}
+
+.footer h2 {
+    color: var(--primaryColor);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.socialIcons a img {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+}
+
+.socialIcons a img:hover {
+    transform: scale(1.1);
+}
+
+.contactInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    color: #fff;
+}
+
+.contactInfo p {
+    margin-left: 10px;
+    font-family: 'Inter', sans-serif;
+}
+.contactInfo svg{
+    color: var(--primaryColor);
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+        padding-top: 2rem;
+    }
+
+    .achievementsGrid {
+        gap: 12px;
+    }
+
+    .achievementItem {
+        padding-top: 3rem;
+    }
+
+    .achievementItem span {
+        font-size: 2rem;
+    }
+
+    .achievementItem p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+        min-height: 100vh; /* Ensure it fills the full height of the viewport */
+    }
+    
+    .container::before {
+        background-size: cover; /* Maintain cover for uniform scaling */
+        background-position: top; /* Adjust position to display laptop */
+    }
+
+    .heading {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .achievementItem {
+        padding-top: 1.5rem;
+    }
+
+    .achievementItem span {
+        font-size: 1.8rem;
+    }
+
+    .achievementItem p {
+        font-size: 0.7rem; /* Fixed typo to add 'rem' for font-size unit */
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contactInfo{
+        margin-bottom: 1.8rem;
+    }
+}
